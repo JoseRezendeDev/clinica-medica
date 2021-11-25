@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,13 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  baseURL = "https://tiagoifsp.ddns.net/clinicaMedicaJWT/";
+  baseURL = "https://tiagoifsp.ddns.net/clinicaMedicaJWT/administradores.php";
 
   constructor(private http: HttpClient) { }
 
-  cadastrarUsuario(nome: string, login: string, senha: string): Observable<any> {
+  cadastrarUsuario(login: string, senha: string): Observable<any> {
     let body = new HttpParams();
-    body = body.set("nome", nome);
     body = body.set("login", login);
     body = body.set("senha", senha);
 

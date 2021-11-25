@@ -19,7 +19,7 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrarUsuario(): void {
-    this.loginService.cadastrarUsuario(this.nome.value, this.login.value, this.senha.value).subscribe(res => {
+    this.loginService.cadastrarUsuario(this.login.value, this.senha.value).subscribe(res => {
       if (res.body.token && res.body.expiry) {
         sessionStorage.setItem("token", res.body.token);
         sessionStorage.setItem("expiry", res.body.expiry);
