@@ -9,7 +9,6 @@ import { LoginService } from '../login.service';
 })
 export class CadastroComponent implements OnInit {
 
-  nome = new FormControl('');
   login = new FormControl('');
   senha = new FormControl('');
 
