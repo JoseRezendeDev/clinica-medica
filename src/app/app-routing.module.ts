@@ -1,15 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { CadastrarPacienteComponent } from './cadastrar-paciente/cadastrar-paciente.component';
+import { HomeComponent } from './home/home.component';
+import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.component';
 
 const routes: Routes = [
   {
-    path: 'welcome',
-    component: WelcomeComponent
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'listarPacientes',
+    component: ListarPacientesComponent
+  },
+  {
+    path: 'cadastrarPaciente',
+    component: CadastrarPacienteComponent
   },
   {
     path: '',
-    redirectTo: 'welcome',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
