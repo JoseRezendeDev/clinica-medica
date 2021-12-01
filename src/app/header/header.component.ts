@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
 
   deslogar(): void {
     sessionStorage.clear();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
   }
 }

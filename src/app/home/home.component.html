@@ -1,6 +1,6 @@
-<app-menu></app-menu>
+<app-menu [flagLogin]="flagLogin"></app-menu>
 <app-header></app-header>
-<div>
-    <app-login></app-login>
+<div *ngIf="!flagLogin">
+    <app-login (eventoLogin)="eventoLogin($event)"></app-login>
     <app-cadastro></app-cadastro>
 </div>

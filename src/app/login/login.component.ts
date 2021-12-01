@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
@@ -10,6 +10,7 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
 
+  @Output() eventoLogin = new EventEmitter<Boolean>();
   login = new FormControl('');
   senha = new FormControl('');
 
@@ -18,15 +19,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  exibirMessages(): void {
+  exibirHome(): void {
     this.loginService.fazerLogin(this.login.value, this.senha.value).subscribe(res => {
-      if (res.body.token && res.body.expiry) {
+      if (res.body.token) {
         sessionStorage.setItem("token", res.body.token);
-        sessionStorage.setItem("expiry", res.body.expiry);
       }
 
       if (this.loginService.estaLogado()) {
-        this.router.navigate(['/messages']);
+        this.eventoLogin.emit(true);
+        //this.router.navigate(['/home']);
       } else {
         alert("Login ou senha invalidos");
       }

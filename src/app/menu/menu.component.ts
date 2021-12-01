@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +8,53 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  
+  @Input() flagLogin : boolean;
 
-  constructor() { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  listarPacientes() {
+    console.log(this.loginService.estaLogado())
+    if (this.loginService.estaLogado()) {
+      this.router.navigate(['/listarPacientes']);
+    } else {
+      alert("Voce nao esta logado")
+    }
+  }
+
+  cadastrarPaciente() {
+    if (this.loginService.estaLogado()) {
+      this.router.navigate(['/cadastrarPaciente']);
+    } else {
+      alert("Voce nao esta logado")
+    }
+  }
+
+  listarMedicos() {
+    if (this.loginService.estaLogado()) {
+      this.router.navigate(['/listarMedicos']);
+    } else {
+      alert("Voce nao esta logado")
+    }
+  }
+
+  cadastrarMedico() {
+    if (this.loginService.estaLogado()) {
+      this.router.navigate(['/cadastrarMedico']);
+    } else {
+      alert("Voce nao esta logado")
+    }
+  }
+
+  cadastrarConsulta() {
+    if (this.loginService.estaLogado()) {
+      this.router.navigate(['/cadastrarConsulta']);
+    } else {
+      alert("Voce nao esta logado")
+    }
   }
 
 }

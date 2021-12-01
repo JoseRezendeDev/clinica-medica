@@ -15,7 +15,7 @@ export class LoginService {
     let body = new HttpParams();
     body = body.set("login", login);
     body = body.set("senha", senha);
-
+    
     return this.http.put<any>(this.baseURL, body, { observe: "response" });
   }
 
@@ -30,10 +30,8 @@ export class LoginService {
   estaLogado(): boolean {
     console.log(sessionStorage);
 
-    if (sessionStorage.getItem("token") != null && sessionStorage.getItem("expiry") != null) {
-      if (parseInt(sessionStorage.getItem("expiry") || "") > Date.now()) {
-        return true;
-      }
+    if (sessionStorage.getItem("token") != null) {
+      return true;
     }
     return false;
   }

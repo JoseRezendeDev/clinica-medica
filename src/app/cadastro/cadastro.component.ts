@@ -19,13 +19,8 @@ export class CadastroComponent implements OnInit {
 
   cadastrarUsuario(): void {
     this.loginService.cadastrarUsuario(this.login.value, this.senha.value).subscribe(res => {
-      if (res.body.token && res.body.expiry) {
-        sessionStorage.setItem("token", res.body.token);
-        sessionStorage.setItem("expiry", res.body.expiry);
-      }
-
-      if (this.loginService.estaLogado()) {
-        alert("Aluno cadastrado com sucesso")
+      if (res.ok == true) {
+        alert("Usuario cadastrado com sucesso")
       } else {
         alert("Falha no cadastro");
       }
