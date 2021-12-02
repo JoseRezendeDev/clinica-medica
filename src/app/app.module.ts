@@ -13,6 +13,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.component';
 import { CadastrarPacienteComponent } from './cadastrar-paciente/cadastrar-paciente.component';
 import { LoginInterceptor } from './login.interceptor';
+import { CadastrarMedicoComponent } from './cadastrar-medico/cadastrar-medico.component';
+import { ListarMedicosComponent } from './listar-medicos/listar-medicos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { LoginInterceptor } from './login.interceptor';
     MenuComponent,
     ListarPacientesComponent,
     CadastrarPacienteComponent,
-    HomeComponent
+    HomeComponent,
+    CadastrarMedicoComponent,
+    ListarMedicosComponent
   ],
   imports: [
     BrowserModule,

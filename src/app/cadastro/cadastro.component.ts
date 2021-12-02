@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login-service/login.service';
 
 @Component({
   selector: 'app-cadastro',
