@@ -43,7 +43,7 @@ export class MenuComponent implements OnInit {
 
   cadastrarMedico() {
     if (this.loginService.estaLogado()) {
-      this.router.navigate(['/cadastrarMedico']);
+      this.router.navigate(['/cadastrarMedicos']);
     } else {
       alert("Voce nao esta logado")
     }

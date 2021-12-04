@@ -3,11 +3,16 @@
 <form>
     <div>
         <div>
-            Nome<input class="input" id="nome" type="text">
+            Nome<input class="input" id="nome" type="text" [formControl]="nome">
         </div>
         <div class="formItem">
-           Especialdiade<input class="input" id="idade" type="date">
+            Especialidade
+           <select name="especialdiade" id="especialdiade" [formControl]="especialidade">
+               <ng-container *ngFor="let especialidade of especialidades">
+                    <option value="valor1">Valor 1</option>
+               </ng-container>
+           </select>
         </div>
-        <button class="button">Cadastrar</button>
+        <button class="button" (click)="cadastrar()">Cadastrar</button>
     </div>
 </form>
