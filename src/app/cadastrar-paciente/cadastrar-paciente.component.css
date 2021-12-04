@@ -1,0 +1,29 @@
+button {
+    background-color: blue;
+    color: white;
+}
+
+#sucessoCadastrar {
+    margin-top: 10vh;
+    color: rgb(100, 100, 100);
+    background-color: rgb(0,255,0);
+    display: block;
+    position: fixed;
+    width: 20vw;
+    height: 10vh;
+    right: 0;
+    top: 0;
+}
+
+#erroCadastrar {
+    margin-top: 10vh;
+    color: rgb(100, 100, 100);
+    background-color: rgb(255, 0, 0);
+    display: block;
+    position: fixed;
+    width: 20vw;
+    height: 10vh;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
