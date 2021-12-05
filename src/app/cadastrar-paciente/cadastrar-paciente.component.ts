@@ -14,7 +14,8 @@ export class CadastrarPacienteComponent implements OnInit {
 
   paciente: Paciente = {
     nome: "",
-    dataNascimento: new Date("01/01/2000")
+    dataNascimento: new Date("01/01/2000"),
+    dataCadastro: new Date(Date.now())
   }
 
   nome = new FormControl('');

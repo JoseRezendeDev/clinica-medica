@@ -1,1 +1,43 @@
 <app-menu></app-menu>
+<div _ngcontent-axo-c28="" class="columns is-centered my-5 ng-star-inserted">
+    <div _ngcontent-axo-c28="" class="columns is-10">
+        <table _ngcontent-axo-c28="" class="table is-fullwidth is-hoverable has-text-centered">
+            <thead _ngcontent-axo-c28="">
+                <tr _ngcontent-axo-c28="">
+                    <th _ngcontent-axo-c28="">Nome</th>
+                    <th _ngcontent-axo-c28="">Data de Nascimento</th>
+                    <th _ngcontent-axo-c28="">Data de Cadastro</th>
+                    <th _ngcontent-axo-c28="">Ações</th>
+                </tr>
+            </thead>
+            <tbody _ngcontent-axo-c28="">
+                <ng-container *ngFor="let paciente of pacientes">
+                    <tr _ngcontent-axo-c28="" class="ng-star-inserted">
+                        <td _ngcontent-axo-c28="">{{paciente.nome}}</td>
+                        <td _ngcontent-axo-c28="">{{paciente.dataNascimento}}</td>
+                        <td _ngcontent-axo-c28="">{{paciente.dataCadastro}}</td>
+                        <td _ngcontent-axo-c28="">
+                            <div _ngcontent-axo-c28="" class="buttons">
+                                <button _ngcontent-axo-c28=""
+                                    class="button is-primary"><span _ngcontent-axo-c28="" class="icon-text"><span
+                                            _ngcontent-axo-c28="" class="icon"><i _ngcontent-axo-c28=""
+                                                class="far fa-eye"></i></span><span _ngcontent-axo-c28="">Ver
+                                            consultas</span></span></button>
+                                <button _ngcontent-axo-c28=""
+                                    class="button is-warning"><span _ngcontent-axo-c28="" class="icon-text" (click)="atualizarPaciente(paciente.id)"><span
+                                            _ngcontent-axo-c28="" class="icon"><i _ngcontent-axo-c28=""
+                                                class="fas fa-pencil-alt"></i></span><span
+                                            _ngcontent-axo-c28="">Editar</span></span></button>
+                                <button _ngcontent-axo-c28=""
+                                    class="button is-danger"><span _ngcontent-axo-c28="" class="icon-text" (click)="deletarPaciente(paciente.id)"><span
+                                            _ngcontent-axo-c28="" class="icon"><i _ngcontent-axo-c28=""
+                                                class="far fa-trash-alt"></i></span><span
+                                            _ngcontent-axo-c28="">Deletar</span></span></button></div>
+                        </td>
+                    </tr>
+                </ng-container>
+                <!---->
+            </tbody>
+        </table>
+    </div>
+</div>
