@@ -1,18 +1,22 @@
 <app-menu></app-menu>
+<div class="message-header" *ngIf="sucessoCadastrar" id="sucessoCadastrar"><h3>Medico cadastrado com sucesso!</h3></div>
+<div class="message-header" *ngIf="erroCadastrar" id="erroCadastrar"><h3>{{mensagemErro}}</h3></div>
+<div>
 <h1>Cadastrar novo medico</h1>
-<form>
-    <div>
+    <form>
         <div>
-            Nome<input class="input" id="nome" type="text" [formControl]="nome">
+            <div>
+                Nome<input class="input" id="nome" type="text" [formControl]="nome">
+            </div>
+            <div class="formItem">
+                Especialidade
+            <select name="especialdiade" id="especialdiade" [formControl]="especialidade">
+                <ng-container *ngFor="let especialidade of especialidades">
+                        <option value="{{especialidade.id}}">{{especialidade.nome}}</option>
+                </ng-container>
+            </select>
+            </div>
+            <button class="button" (click)="cadastrar()">Cadastrar</button>
         </div>
-        <div class="formItem">
-            Especialidade
-           <select name="especialdiade" id="especialdiade" [formControl]="especialidade">
-               <ng-container *ngFor="let especialidade of especialidades">
-                    <option value="{{especialidade.id}}">{{especialidade.nome}}</option>
-               </ng-container>
-           </select>
-        </div>
-        <button class="button" (click)="cadastrar()">Cadastrar</button>
-    </div>
-</form>
+    </form>
+</div>
