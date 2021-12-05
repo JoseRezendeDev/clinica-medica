@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  
-  @Input() flagLogin : boolean;
+
+  @Input() flagLogin: boolean;
+  estaLogado: boolean = false;
 
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    this.estaLogado = this.loginService.estaLogado();
   }
 
   listarPacientes() {
@@ -61,4 +63,10 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/home'])
   }
 
+  deslogar(): void {
+    sessionStorage.clear();
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
+  }
 }
