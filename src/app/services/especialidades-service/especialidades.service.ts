@@ -11,7 +11,7 @@ export class EspecialidadesService {
 
   constructor(private http: HttpClient) { }
 
-  getEspecialidades() {
-    console.log(this.http.get<any>(this.baseURL));
+  getEspecialidades() : Observable<any>{
+    return this.http.get<Observable<any>>(this.baseURL);
   }
 }

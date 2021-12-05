@@ -16,7 +16,7 @@ export class CadastrarMedicoComponent implements OnInit {
   constructor(private especialidadeService : EspecialidadesService) { }
 
   ngOnInit(): void {
-    this.especialidadeService.getEspecialidades();
+    this.especialidades = this.especialidadeService.getEspecialidades();
   }
 
   cadastrar(){

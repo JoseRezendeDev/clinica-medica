@@ -9,7 +9,7 @@
             Especialidade
            <select name="especialdiade" id="especialdiade" [formControl]="especialidade">
                <ng-container *ngFor="let especialidade of especialidades">
-                    <option value="valor1">Valor 1</option>
+                    <option value="{{especialidade.id}}">{{especialidade.nome}}</option>
                </ng-container>
            </select>
         </div>
