@@ -17,6 +17,9 @@ export class VerConsultasComponent implements OnInit {
   pacientes: Paciente[];
   medicos: Medico[];
 
+  paciente: Paciente;
+  medico: Medico;
+
   constructor(private pacientesService: PacientesService, private medicosService: MedicosService, private consultasService: ConsultasService) { }
 
   ngOnInit(): void {
@@ -32,6 +35,11 @@ export class VerConsultasComponent implements OnInit {
       console.log(res)
 
       this.consultas = res;
+      this.consultas.forEach(consulta => {
+        this.paciente = this.pacientes.find(paciente => paciente.id === consulta.idPaciente);
+        this.medico = this.medicos.find(medico => medico.id === consulta.idMedico);
+      })
+
     });
   }
 
