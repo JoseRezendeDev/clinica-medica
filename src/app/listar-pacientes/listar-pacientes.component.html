@@ -13,7 +13,7 @@
             <tbody _ngcontent-axo-c28="">
                 <ng-container *ngFor="let paciente of pacientes">
                     <tr _ngcontent-axo-c28="" class="ng-star-inserted">
-                        <td _ngcontent-axo-c28="">{{paciente.nome}}</td>
+                        <td _ngcontent-axo-c28="">{{paciente.nome | nomeCapitalized}}</td>
                         <td _ngcontent-axo-c28="">{{paciente.dataNascimento}}</td>
                         <td _ngcontent-axo-c28="">{{paciente.dataCadastro}}</td>
                         <td _ngcontent-axo-c28="">

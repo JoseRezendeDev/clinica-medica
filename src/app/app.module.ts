@@ -16,6 +16,7 @@ import { LoginInterceptor } from './login.interceptor';
 import { CadastrarMedicoComponent } from './cadastrar-medico/cadastrar-medico.component';
 import { ListarMedicosComponent } from './listar-medicos/listar-medicos.component';
 import { VerConsultasComponent } from './ver-consultas/ver-consultas.component';
+import { NomeCapitalizedPipe } from './nome-capitalized.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { VerConsultasComponent } from './ver-consultas/ver-consultas.component';
     HomeComponent,
     CadastrarMedicoComponent,
     ListarMedicosComponent,
-    VerConsultasComponent
+    VerConsultasComponent,
+    NomeCapitalizedPipe
   ],
   imports: [
     BrowserModule,
