@@ -12,8 +12,8 @@ export class ConsultasService {
 
   constructor(private http: HttpClient) { }
 
-  getConsultas() : Observable<Consulta> {
-    return this.http.get<Consulta>(this.baseURL);
+  getConsultas() : Observable<Consulta[]> {
+    return this.http.get<Consulta[]>(this.baseURL);
   }
 
   cadastrarConsulta(consulta) : Observable<any>{

@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<div _ngcontent-axo-c28="" class="columns is-centered my-5 ng-star-inserted">
+    <div _ngcontent-axo-c28="" class="columns is-10">
+        <table _ngcontent-axo-c28="" class="table is-fullwidth is-hoverable has-text-centered">
+            <thead _ngcontent-axo-c28="">
+                <tr _ngcontent-axo-c28="">
+                    <th _ngcontent-axo-c28="">Médico</th>
+                    <th _ngcontent-axo-c28="">Paciente</th>
+                    <th _ngcontent-axo-c28="">Data</th>
+                    <th _ngcontent-axo-c28="">Cancelar</th>
+                </tr>
+            </thead>
+            <tbody _ngcontent-axo-c28="">
+                <ng-container *ngFor="let consulta of consultas">
+                    <tr _ngcontent-axo-c28="" class="ng-star-inserted">
+                        <td _ngcontent-axo-c28="">{{consulta.idMedico}}</td>
+                        <td _ngcontent-axo-c28="">{{consulta.idPaciente}}</td>
+                        <td _ngcontent-axo-c28="">{{consulta.data}}</td>
+                        <td _ngcontent-axo-c28="">
+                            <div _ngcontent-axo-c28="" class="buttons">
+                                <button _ngcontent-axo-c28=""
+                                    class="button is-danger"><span _ngcontent-axo-c28="" class="icon-text" (click)="cancelarConsulta(consulta.id)"><span
+                                            _ngcontent-axo-c28="" class="icon"><i _ngcontent-axo-c28=""
+                                                class="far fa-trash-alt"></i></span><span
+                                            _ngcontent-axo-c28="">Cancelar</span></span></button></div>
+                        </td>
+                    </tr>
+                </ng-container>
+                <!---->
+            </tbody>
+        </table>
+    </div>
+</div>

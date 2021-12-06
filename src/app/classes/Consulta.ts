@@ -1,5 +1,6 @@
 export interface Consulta {
+    id: number,
     idPaciente: number,
     idMedico: number,
-    dataConsulta: Date,
+    data: Date,
 }

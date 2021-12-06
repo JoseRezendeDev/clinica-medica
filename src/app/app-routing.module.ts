@@ -5,6 +5,7 @@ import { CadastrarPacienteComponent } from './cadastrar-paciente/cadastrar-pacie
 import { HomeComponent } from './home/home.component';
 import { ListarMedicosComponent } from './listar-medicos/listar-medicos.component';
 import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.component';
+import { VerConsultasComponent } from './ver-consultas/ver-consultas.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'cadastrarMedicos',
     component: CadastrarMedicoComponent
+  },
+  {
+    path: 'verConsultas/:id',
+    component: VerConsultasComponent
   },
   {
     path: '',

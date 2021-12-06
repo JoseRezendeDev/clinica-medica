@@ -12,8 +12,8 @@ export class MedicosService {
 
   constructor(private http: HttpClient) { }
 
-  getMedicos() : Observable<Medico> {
-    return this.http.get<Medico>(this.baseURL);
+  getMedicos() : Observable<Medico[]> {
+    return this.http.get<Medico[]>(this.baseURL);
   }
 
   cadastrarMedico(medico) : Observable<any>{

@@ -10,7 +10,7 @@ import { MedicosService } from '../services/medicos-service/medicos.service';
 })
 export class ListarMedicosComponent implements OnInit {
 
-  medicos : any;
+  medicos : Medico[];
 
   constructor(private medicosService : MedicosService, private loginService : LoginService) { }
 
