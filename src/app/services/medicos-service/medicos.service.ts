@@ -20,18 +20,18 @@ export class MedicosService {
     let body = new HttpParams();
     body = body.set("nome", medico.nome);
     body = body.set("idEspecialidade", medico.idEspecialidade);
-    return this.http.post(this.baseURL, body, {observe: "response"});
+    return this.http.post(this.baseURL + "?nome=" + medico.nome + "&idEspecialidade=" + medico.idEspecialidade, body, {observe: "response"});
   }
 
   deletarMedico(idMedico) : Observable<any>{
-    return this.http.delete(this.baseURL + "/" + idMedico, {observe: "response"});
+    return this.http.delete(this.baseURL + "?id=" + idMedico, {observe: "response"});
   }
 
   editarMedico(medico) : Observable<any>{
     let body = new HttpParams();
     body = body.set("nome", medico.nome);
     body = body.set("idEspecialidade", medico.idEspecialidade);
-    return this.http.put(this.baseURL, body, {observe: "response"});
+    return this.http.put(this.baseURL + "?nome=" + medico.nome + "&idEspecialidade=" + medico.idEspecialidade, body, {observe: "response"});
   }
 
 
