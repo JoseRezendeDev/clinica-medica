@@ -44,7 +44,13 @@ export class VerConsultasComponent implements OnInit {
   }
 
   cancelarConsulta(id) {
-    console.log(id);
+    this.consultasService.deletarConsulta(id).subscribe(res => {
+      if(res.ok == true) {
+        alert("Consulta cancelada com sucesso");
+      } else {
+        alert("Cancelamento da consulta não foi realizada!");
+      }
+    })
 
   }
 }

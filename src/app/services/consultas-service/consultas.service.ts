@@ -25,7 +25,7 @@ export class ConsultasService {
   }
 
   deletarConsulta(idConsulta) : Observable<any>{
-    return this.http.delete(this.baseURL + "/" + idConsulta, {observe: "response"});
+    return this.http.delete(this.baseURL + "?id=" + idConsulta, {observe: "response"});
   }
 
   editarConsulta(consulta) : Observable<any>{
