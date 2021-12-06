@@ -20,7 +20,9 @@ export class PacientesService {
     let body = new HttpParams();
     body = body.set("nome", paciente.nome);
     body = body.set("dataNascimento", paciente.dataNascimento);
-    return this.http.post(this.baseURL, body, {observe: "response"});
+    console.log(body);
+    
+    return this.http.post(this.baseURL + "?nome=" + paciente.nome + "&dataNascimento=" + paciente.dataNascimento, body, {observe: "response"});
   }
 
   deletarPaciente(idPaciente) : Observable<any>{

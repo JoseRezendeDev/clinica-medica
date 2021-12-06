@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Paciente } from '../classes/Paciente';
 import { LoginService } from '../services/login-service/login.service';
 import { PacientesService } from '../services/pacientes-service/pacientes.service';

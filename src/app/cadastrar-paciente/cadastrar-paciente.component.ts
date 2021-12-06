@@ -15,7 +15,6 @@ export class CadastrarPacienteComponent implements OnInit {
   paciente: Paciente = {
     nome: "",
     dataNascimento: new Date("01/01/2000"),
-    dataCadastro: new Date(Date.now())
   }
 
   nome = new FormControl('');
@@ -38,13 +37,16 @@ export class CadastrarPacienteComponent implements OnInit {
 
     if (this.mensagemErro === '') {
       this.paciente.id = null;
-      this.pacientesService.cadastrarPaciente(this.paciente);
+      this.pacientesService.cadastrarPaciente(this.paciente).subscribe(res => {
+        console.log(res);
+        
+      });
 
       this.sucessoCadastrar = true;
       let componente = this;
       setTimeout(function () {
         componente.sucessoCadastrar = false;
-        componente.router.navigate(['/listarPaciente']);
+        componente.router.navigate(['/listarPacientes']);
       }, 2000);
     } else {
       this.erroCadastrar = true;
